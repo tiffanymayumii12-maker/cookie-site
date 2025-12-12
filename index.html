@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cookie Order Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background: #fff7ef;
+        color: #4a3b2f;
+    }
+
+    header {
+        text-align: center;
+        padding: 40px 20px;
+        background: linear-gradient(135deg, #f7d7b5, #f4b67c);
+        color: #4a3b2f;
+        border-bottom: 5px solid #d69b64;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 2.4rem;
+    }
+
+    header p {
+        margin: 10px 0 0;
+        font-size: 1.1rem;
+    }
+
+    .container {
+        max-width: 650px;
+        margin: 40px auto;
+        background: #ffffff;
+        padding: 25px 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    label {
+        font-weight: 600;
+        display: block;
+        margin-top: 18px;
+        margin-bottom: 5px;
+    }
+
+    input, textarea, select {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #e5c8a6;
+        border-radius: 8px;
+        font-size: 1rem;
+        outline: none;
+        background: #fffdf9;
+    }
+
+    input:focus, textarea:focus, select:focus {
+        border-color: #d69b64;
+        background: #fff7ef;
+    }
+
+    button {
+        margin-top: 25px;
+        width: 100%;
+        padding: 14px;
+        border: none;
+        border-radius: 10px;
+        background: #d69b64;
+        color: white;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: 0.2s ease;
+    }
+
+    button:hover {
+        background: #bc824b;
+    }
+
+    footer {
+        text-align: center;
+        margin: 40px 0 20px;
+        color: #7a6b5b;
+        font-size: 0.9rem;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🍪 Order Cookies</h1>
+    <p>Freshly baked, made with love.</p>
+</header>
+
+<div class="container">
+    <form action="https://formspree.io/f/mqargwlv" method="POST">
+        
+        <label>Your Name</label>
+        <input type="text" name="name" placeholder="Jane Doe" required>
+
+        <label>Your Email</label>
+        <input type="email" name="email" placeholder="you@example.com" required>
+
+        <label>Cookie Type</label>
+        <select name="cookie_type" required>
+            <option value="" disabled selected>Select a cookie</option>
+            <option>Chocolate Chip</option>
+            <option>Snickerdoodle</option>
+            <option>Oatmeal Raisin</option>
+            <option>Sugar Cookie</option>
+        </select>
+
+        <label>Quantity</label>
+        <input type="number" name="quantity" min="1" placeholder="1 dozen" required>
+
+        <label>Notes</label>
+        <textarea name="notes" rows="4" placeholder="Any special requests? (optional)"></textarea>
+
+        <button type="submit">Send Order</button>
+    </form>
+</div>
+
+<footer>
+    © 2025 Fresh Cookies • Baked Daily
+</footer>
+
+</body>
+</html>
