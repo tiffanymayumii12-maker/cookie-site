@@ -201,13 +201,13 @@
             </form>
 
             <div id="successMessage" class="success-message">
-                <strong>Order sent!</strong> We'll DM you on Instagram within 24 h for payment & delivery.
+                Thank you for ordering!
             </div>
         </div>
     </div>
 
     <script>
-        /* ---------- multi-cookie bundle ---------- */
+        /* ---------- multi-cookie bundle (NO cookieType_x / qty_x in email) ---------- */
         let nextIndex = 1;
         const orderWrap = document.getElementById('cookieOrders');
         const options = `
@@ -236,9 +236,9 @@
             nextIndex++;
         });
 
-        /* ---------- bundle into one readable field ---------- */
+        /* ---------- bundle into ONE hidden field ---------- */
         document.getElementById('cookieForm').addEventListener('submit', function (e) {
-            e.preventDefault();                       // stop normal send
+            e.preventDefault();
             const sets = orderWrap.querySelectorAll('.cookie-set');
             let lines = [];
             sets.forEach(set => {
