@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🌸 Kawaii Cookie Shop 🌸</title>
+    <title>Pink Cookie Shop</title>
     <style>
         * {
             margin: 0;
@@ -310,7 +310,7 @@
     <header class="header">
         <div class="header-content">
             <div class="bow-decoration">🎀</div>
-            <h1>🌸 Kawaii Cookie Shop 🌸</h1>
+            <h1>🌸 Pink Cookie Shop 🌸</h1>
             <div class="bow-decoration">🎀</div>
             <div class="header-icons">
                 <span>🍪</span>
@@ -319,7 +319,7 @@
                 <span>💕</span>
                 <span>🍪</span>
             </div>
-            <p style="color: white; font-size: 1.2rem; margin-top: 1rem;">Order the cutest cookies ever! 💕</p>
+            <p style="color: white; font-size: 1.2rem; margin-top: 1rem;">Order delicious pink cookies!</p>
         </div>
     </header>
 
@@ -331,24 +331,24 @@
             <form id="cookieForm" action="https://formspree.io/f/mqargwlv" method="POST">
                 <div class="form-group">
                     <label for="name">🌸 Your Name</label>
-                    <input type="text" id="name" name="name" required placeholder="Enter your cute name...">
+                    <input type="text" id="name" name="name" required placeholder="Enter your name...">
                 </div>
 
                 <div class="form-group">
                     <label for="email">💖 Email Address</label>
-                    <input type="email" id="email" name="email" required placeholder="your.email@kawaii.com">
+                    <input type="email" id="email" name="email" required placeholder="your.email@example.com">
                 </div>
 
                 <div class="form-group">
                     <label for="cookieType">🍪 Cookie Type</label>
                     <select id="cookieType" name="cookieType" required>
                         <option value="">Choose your favorite...</option>
-                        <option value="strawberry">🍓 Strawberry Pink Cookies</option>
-                        <option value="chocolate">🍫 Chocolate Chip Cookies</option>
-                        <option value="vanilla">🌟 Vanilla Sprinkle Cookies</option>
-                        <option value="matcha">🍵 Matcha Green Tea Cookies</option>
-                        <option value="sakura">🌸 Sakura Cherry Cookies</option>
-                        <option value="rainbow">🌈 Rainbow Unicorn Cookies</option>
+                        <option value="strawberry">Strawberry Pink Cookies</option>
+                        <option value="chocolate">Chocolate Chip Cookies</option>
+                        <option value="vanilla">Vanilla Sprinkle Cookies</option>
+                        <option value="matcha">Matcha Green Tea Cookies</option>
+                        <option value="sakura">Sakura Cherry Cookies</option>
+                        <option value="rainbow">Rainbow Sugar Cookies</option>
                     </select>
                 </div>
 
@@ -359,7 +359,7 @@
 
                 <div class="form-group">
                     <label for="notes">📝 Special Notes</label>
-                    <textarea id="notes" name="notes" placeholder="Any special requests? Extra kawaii decorations? 💕"></textarea>
+                    <textarea id="notes" name="notes" placeholder="Any special requests?"></textarea>
                 </div>
 
                 <button type="submit" class="submit-btn"></button>
@@ -367,7 +367,7 @@
 
             <div id="successMessage" class="success-message">
                 <h3>✨ Order Submitted Successfully! ✨</h3>
-                <p>Thank you for your kawaii cookie order! We'll get back to you soon! 💕</p>
+                <p>Thank you for your cookie order! We'll get back to you soon!</p>
             </div>
         </div>
     </div>
@@ -406,7 +406,7 @@
                     throw new Error('Form submission failed');
                 }
             }).catch(error => {
-                alert('Oops! Something went wrong. Please try again! 💔');
+                alert('Oops! Something went wrong. Please try again!');
                 // Reset button
                 submitBtn.style.background = 'linear-gradient(135deg, #ff69b4 0%, #ff1493 100%)';
                 submitBtn.innerHTML = '<span style="position: relative; z-index: 1;">🍪 Order Cookies! 🍪</span>';
