@@ -2,261 +2,288 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookies by JC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        /* ---------- soft plaid background ---------- */
         body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            background: linear-gradient(135deg, #ffeef8 0%, #ffe0f0 100%);
-            min-height: 100vh;
-            overflow-x: hidden;
+            margin: 0;
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            background: #ffeef8 url('data:image/svg+xml,\
+                <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" opacity="0.08">\
+                <rect width="120" height="120" fill="%23ffb6c1"/>\
+                <path d="M0 60h120M60 0v120" stroke="%23ffffff" stroke-width="20"/>\
+                </svg>');
+            background-size: 120px 120px;
+            color: #555;
         }
 
-        /* Header Styles */
+        /* ---------- header ---------- */
         .header {
-            background: linear-gradient(135deg, #ffb6c1 0%, #ffc0cb 50%, #ffb6c1 100%);
-            padding: 2rem 1rem;
+            background: linear-gradient(135deg, #ffb6c1 0%, #ffc0cb 100%);
             text-align: center;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(255, 182, 193, 0.4);
+            padding: 2.5rem 1rem 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,.08);
         }
-
-        .header-content {
-            position: relative;
-            z-index: 1;
+        .header img {
+            width: 130px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,.15));
         }
-
         .header h1 {
-            font-size: 3rem;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-            margin-bottom: 1rem;
-            letter-spacing: 2px;
+            margin: .5rem 0 0;
+            font-size: 2.6rem;
+            color: #fff;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,.15);
+        }
+        .header p {
+            color: #fff;
+            font-size: 1.15rem;
+            margin-top: .25rem;
         }
 
-        .header-icons {
-            font-size: 2rem;
-            margin: 1rem 0;
-        }
-
-        /* Main Container */
+        /* ---------- form card ---------- */
         .container {
-            max-width: 600px;
+            max-width: 650px;
             margin: 2rem auto;
             padding: 0 1rem;
         }
-
-        /* Form Card */
-        .form-card {
-            background: white;
-            border-radius: 30px;
-            padding: 2.5rem;
-            box-shadow: 0 10px 40px rgba(255, 182, 193, 0.3);
-            position: relative;
-            overflow: hidden;
+        .card {
+            background: #fff;
+            border-radius: 28px;
+            box-shadow: 0 8px 30px rgba(255, 182, 193, .35);
+            padding: 2.2rem 2.5rem 2.5rem;
         }
-
-        .form-title {
+        .card h2 {
             text-align: center;
             color: #ff69b4;
-            font-size: 2rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1.6rem;
+            font-size: 1.9rem;
         }
 
-        /* Form Fields */
-        .form-group {
-            margin-bottom: 1.5rem;
-            position: relative;
-        }
-
+        /* ---------- inputs ---------- */
         label {
             display: block;
             color: #ff69b4;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 1.1rem 0 .35rem;
         }
-
         input, select, textarea {
             width: 100%;
-            padding: 1rem;
+            padding: .85rem 1rem;
             border: 2px solid #ffb6c1;
-            border-radius: 20px;
+            border-radius: 18px;
             font-size: 1rem;
-            font-family: inherit;
-            outline: none;
-            transition: all 0.3s ease;
-            background: #fff5f5;
+            background: #fff5f8;
+            transition: .25s;
         }
-
         input:focus, select:focus, textarea:focus {
-            border-color: #ff69b4;
-            box-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
-            transform: scale(1.02);
+            border-color: #ff1493;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 20, 147, .18);
         }
-
         textarea {
             resize: vertical;
-            min-height: 100px;
+            min-height: 90px;
         }
 
-        /* Submit Button */
+        /* ---------- cookie order block ---------- */
+        .cookie-set {
+            border: 1px dashed #ffb6c1;
+            border-radius: 18px;
+            padding: 1rem 1.2rem;
+            margin-bottom: .9rem;
+            position: relative;
+        }
+        .remove-btn {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            background: #ff85a2;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 26px;
+            height: 26px;
+            font-size: 1rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+        #addCookie {
+            background: transparent;
+            border: 2px dashed #ff85a2;
+            color: #ff69b4;
+            font-weight: 700;
+            padding: .6rem;
+            border-radius: 18px;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 1.2rem;
+            transition: .2s;
+        }
+        #addCookie:hover {
+            background: #fff0f5;
+        }
+
+        /* ---------- submit ---------- */
         .submit-btn {
             width: 100%;
-            padding: 1.2rem;
+            padding: 1.1rem;
             background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
-            color: white;
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: 700;
             border: none;
             border-radius: 50px;
-            font-size: 1.3rem;
-            font-weight: bold;
             cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(255, 20, 147, 0.4);
+            box-shadow: 0 4px 18px rgba(255, 20, 147, .35);
+            transition: .25s;
         }
-
         .submit-btn:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 30px rgba(255, 20, 147, 0.6);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(255, 20, 147, .45);
         }
 
-        /* Success Message */
+        /* ---------- success ---------- */
         .success-message {
             display: none;
             text-align: center;
             padding: 2rem;
-            background: linear-gradient(135deg, #90ee90 0%, #98fb98 100%);
+            background: #d4fcdd;
+            color: #2e7d32;
             border-radius: 20px;
-            color: #228b22;
-            font-size: 1.2rem;
-            margin-top: 2rem;
-            animation: slideIn 0.5s ease;
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
         }
 
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* ---------- tiny sparkle ---------- */
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; transform: scale(.7); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+        .tiny-sparkle {
+            position: absolute;
+            pointer-events: none;
+            width: 16px;
+            height: 16px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ffc0cb"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>') center/contain no-repeat;
+            animation: twinkle 2.5s infinite;
         }
 
-        /* Responsive Design */
+        /* ---------- responsive ---------- */
         @media (max-width: 600px) {
-            .header h1 { font-size: 2rem; }
-            .form-title { font-size: 1.5rem; }
-            .form-card { padding: 1.5rem; }
-            .submit-btn { font-size: 1.1rem; }
+            .header h1 { font-size: 2.2rem; }
+            .card { padding: 1.5rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- ---------- Hello Kitty transparent PNGs ---------- -->
+    <div class="tiny-sparkle" style="top:8%;left:7%;"></div>
+    <div class="tiny-sparkle" style="top:15%;left:85%;animation-delay:.4s;"></div>
+    <div class="tiny-sparkle" style="top:70%;left:10%;animation-delay:.8s;"></div>
+    <div class="tiny-sparkle" style="top:80%;left:75%;animation-delay:1.2s;"></div>
+
+    <!-- ---------- header ---------- -->
     <header class="header">
-        <div class="header-content">
-            <h1>Cookies by JC</h1>
-            <div class="header-icons">
-                <span>🍪</span>
-                <span>💖</span>
-                <span>🌸</span>
-                <span>💕</span>
-                <span>🍪</span>
-            </div>
-            <p style="color: white; font-size: 1.2rem; margin-top: 1rem;">Homemade cookies with love</p>
-        </div>
+        <img src="https://www.stickpng.com/assets/images/580b57fbd9996e24bc43c02f.png" alt="Hello Kitty">
+        <h1>Cookies by JC</h1>
+        <p>homemade, soft-baked & pretty in pink</p>
     </header>
 
-    <!-- Main Content -->
+    <!-- ---------- form ---------- -->
     <div class="container">
-        <div class="form-card">
-            <h2 class="form-title">Order Form</h2>
-            
+        <div class="card">
+            <h2>Order Form</h2>
+
             <form id="cookieForm" action="https://formspree.io/f/mqargwlv" method="POST">
-                <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" required placeholder="Enter your name...">
+                <label for="name">Your Name *</label>
+                <input type="text" id="name" name="name" required placeholder="Jane Carter">
+
+                <label for="instagram">Instagram Handle *</label>
+                <input type="text" id="instagram" name="instagram" required placeholder="@cookiesbyjc">
+
+                <label>Cookie Order(s) *</label>
+                <div id="cookieOrders">
+                    <!-- first cookie block -->
+                    <div class="cookie-set" data-index="0">
+                        <select name="cookieType_0" required>
+                            <option value="">— pick a cookie —</option>
+                            <option value="Strawberry Cookies $12">Strawberry Cookies – $12</option>
+                            <option value="Chocolate Chip $10">Chocolate Chip – $10</option>
+                            <option value="Vanilla Sprinkle $11">Vanilla Sprinkle – $11</option>
+                            <option value="Matcha Green Tea $13">Matcha Green Tea – $13</option>
+                            <option value="Cherry Sakura $14">Cherry Sakura – $14</option>
+                            <option value="Rainbow Sugar $12">Rainbow Sugar – $12</option>
+                        </select>
+                        <label style="margin-top:.6rem;">Quantity</label>
+                        <input type="number" name="qty_0" min="1" max="99" required placeholder="1">
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required placeholder="your.email@example.com">
-                </div>
+                <button type="button" id="addCookie">+ Add Another Cookie</button>
 
-                <div class="form-group">
-                    <label for="cookieType">Cookie Type</label>
-                    <select id="cookieType" name="cookieType" required>
-                        <option value="">Choose your favorite...</option>
-                        <option value="strawberry">Strawberry Cookies - $12/dozen</option>
-                        <option value="chocolate">Chocolate Chip Cookies - $10/dozen</option>
-                        <option value="vanilla">Vanilla Sprinkle Cookies - $11/dozen</option>
-                        <option value="matcha">Matcha Green Tea Cookies - $13/dozen</option>
-                        <option value="sakura">Cherry Cookies - $14/dozen</option>
-                        <option value="rainbow">Rainbow Sugar Cookies - $12/dozen</option>
-                    </select>
-                </div>
+                <label for="notes">Special Notes</label>
+                <textarea id="notes" name="notes" placeholder="Allergies, gift message, delivery date..."></textarea>
 
-                <div class="form-group">
-                    <label for="quantity">Quantity (dozen)</label>
-                    <input type="number" id="quantity" name="quantity" min="1" max="100" required placeholder="How many dozen?">
-                </div>
-
-                <div class="form-group">
-                    <label for="notes">Special Notes</label>
-                    <textarea id="notes" name="notes" placeholder="Any special requests?"></textarea>
-                </div>
-
-                <button type="submit" class="submit-btn">Order Cookies!</button>
+                <button type="submit" class="submit-btn">Place Order</button>
             </form>
 
             <div id="successMessage" class="success-message">
-                <h3>Order Submitted Successfully!</h3>
-                <p>Thank you for your cookie order! We'll get back to you soon!</p>
+                <strong>Order sent!</strong> We'll DM you on Instagram within 24 h for payment & delivery.
             </div>
         </div>
     </div>
 
+    <!-- ---------- scripts ---------- -->
     <script>
-        // Form submission handling
-        document.getElementById('cookieForm').addEventListener('submit', function(e) {
+        const prices = ["$12", "$10", "$11", "$13", "$14", "$12"];
+        let nextIndex = 1;
+        const orderWrapper = document.getElementById('cookieOrders');
+        document.getElementById('addCookie').addEventListener('click', () => {
+            const div = document.createElement('div');
+            div.className = 'cookie-set';
+            div.dataset.index = nextIndex;
+            div.innerHTML = `
+                <button class="remove-btn" type="button" onclick="this.parentElement.remove()">×</button>
+                <select name="cookieType_${nextIndex}" required>
+                    <option value="">— pick a cookie —</option>
+                    <option value="Strawberry Cookies $12">Strawberry Cookies – $12</option>
+                    <option value="Chocolate Chip $10">Chocolate Chip – $10</option>
+                    <option value="Vanilla Sprinkle $11">Vanilla Sprinkle – $11</option>
+                    <option value="Matcha Green Tea $13">Matcha Green Tea – $13</option>
+                    <option value="Cherry Sakura $14">Cherry Sakura – $14</option>
+                    <option value="Rainbow Sugar $12">Rainbow Sugar – $12</option>
+                </select>
+                <label style="margin-top:.6rem;">Quantity</label>
+                <input type="number" name="qty_${nextIndex}" min="1" max="99" required placeholder="1">
+            `;
+            orderWrapper.appendChild(div);
+            nextIndex++;
+        });
+
+        // Form-spree submit
+        document.getElementById('cookieForm').addEventListener('submit', function (e) {
             e.preventDefault();
-            
-            const form = e.target;
-            const formData = new FormData(form);
-            const submitBtn = form.querySelector('.submit-btn');
-            const successMessage = document.getElementById('successMessage');
-            
-            // Show loading state
-            submitBtn.style.background = '#999999';
-            submitBtn.textContent = 'Processing...';
-            submitBtn.disabled = true;
-            
-            // Submit to Formspree
-            fetch(form.action, {
+            const btn = this.querySelector('.submit-btn');
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+
+            fetch(this.action, {
                 method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            }).then(response => {
-                if (response.ok) {
-                    // Show success message
-                    form.style.display = 'none';
-                    successMessage.style.display = 'block';
-                } else {
-                    throw new Error('Form submission failed');
-                }
-            }).catch(error => {
-                alert('Oops! Something went wrong. Please try again!');
-                // Reset button
-                submitBtn.style.background = 'linear-gradient(135deg, #ff69b4 0%, #ff1493 100%)';
-                submitBtn.textContent = 'Order Cookies!';
-                submitBtn.disabled = false;
+                body: new FormData(this),
+                headers: { 'Accept': 'application/json' }
+            })
+            .then(r => {
+                if (r.ok) {
+                    this.style.display = 'none';
+                    document.getElementById('successMessage').style.display = 'block';
+                } else throw new Error();
+            })
+            .catch(() => {
+                alert('Something went wrong – please try again!');
+                btn.textContent = 'Place Order';
+                btn.disabled = false;
             });
         });
     </script>
