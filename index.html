@@ -207,6 +207,7 @@
     </div>
 
     <script>
+        /* ---------- multi-cookie bundle ---------- */
         let nextIndex = 1;
         const orderWrap = document.getElementById('cookieOrders');
         const options = `
@@ -235,12 +236,34 @@
             nextIndex++;
         });
 
+        /* ---------- bundle into one readable field ---------- */
         document.getElementById('cookieForm').addEventListener('submit', function (e) {
-            e.preventDefault();
+            e.preventDefault();                       // stop normal send
+            const sets = orderWrap.querySelectorAll('.cookie-set');
+            let lines = [];
+            sets.forEach(set => {
+                const type = set.querySelector('select[name^="cookieType"]').value;
+                const qty  = set.querySelector('input[name^="qty"]').value;
+                if (type && qty) lines.push(`${qty} × ${type}`);
+            });
+            const orderSummary = lines.join(' | ') || 'No cookies selected';
+
+            /* inject hidden field with pretty list */
+            let bundleInput = document.querySelector('input[name="orderSummary"]');
+            if (!bundleInput) {
+                bundleInput = document.createElement('input');
+                bundleInput.type = 'hidden';
+                bundleInput.name = 'orderSummary';
+                this.appendChild(bundleInput);
+            }
+            bundleInput.value = orderSummary;
+
+            /* loading state */
             const btn = this.querySelector('.submit-btn');
             btn.textContent = 'Sending...';
             btn.disabled = true;
 
+            /* send to Formspree */
             fetch(this.action, {
                 method: 'POST',
                 body: new FormData(this),
